@@ -4,7 +4,7 @@ from Products.ATContentTypes.content.schemata import finalizeATCTSchema
 from Products.Archetypes import atapi
 from collective.portletpage.config import PROJECTNAME
 from collective.portletpage.interfaces import IPortletPage
-from zope.interface import implements
+from zope.interface import implementer
 
 
 PortletPageSchema = document.ATDocumentSchema.copy()
@@ -14,11 +14,11 @@ PortletPageSchema['description'].storage = atapi.AnnotationStorage()
 PortletPageSchema['text'].storage = atapi.AnnotationStorage()
 finalizeATCTSchema(PortletPageSchema)
 
-
+@implementer(IPortletPage)
 class PortletPage(document.ATDocument):
     """A page with some body text and a list of portlets.
     """
-    implements(IPortletPage)
+    
     portal_type = "Portlet Page"
 
     _at_rename_after_creation = True

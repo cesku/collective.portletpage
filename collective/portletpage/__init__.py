@@ -23,3 +23,8 @@ def initialize(context):
             permission = config.ADD_PERMISSIONS[atype.portal_type],
             extra_constructors = (constructor, ),
             ).initialize(context)
+
+
+from Products.CMFCore.permissions import setDefaultRoles
+DEFAULT_ROLES = ('Manager', 'Site Administrator', 'Contributor')
+setDefaultRoles('Portlet Page: Add Portlet Page', DEFAULT_ROLES)

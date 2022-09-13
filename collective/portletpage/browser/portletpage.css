@@ -24,3 +24,7 @@
 #portletPageColumns dd.portletFooter {
     margin: 0;
 }
+
+.template-portlets #portletPageColumns hr {
+    clear: both;
+}

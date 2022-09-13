@@ -13,6 +13,7 @@
 .svn/
 .project
 .pydevproject
+buildout.cfg
 bin/
 build/
 develop-eggs/

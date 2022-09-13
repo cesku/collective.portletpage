@@ -1,5 +1,7 @@
+include .coveragerc
 include *.rst
-recursive-include docs *
-recursive-include collective *
+include *.txt
+graft collective
+graft docs
+
 global-exclude *.pyc
-global-include *.mo

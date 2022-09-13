@@ -16,6 +16,17 @@ class TwoColumns(Base):
     """A two-column layout.
     """
 
+    def _get_text(self):
+        return getattr(self.context, 'text', None)
+
+    def at_text(self):
+        text = self._get_text()
+        return text and hasattr(self.context, 'widget')
+
+    def dx_text(self):
+        text = self._get_text()
+        return text and hasattr(text, 'output_relative_to')
+
     def hasColumnTop(self):
         ploneview = self.plone_view()
         return ploneview.have_portlets('collective.portletpage.toprow', view=self)

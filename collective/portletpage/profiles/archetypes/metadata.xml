@@ -3,6 +3,6 @@
   <version>1000</version>
   <dependencies>
       <dependency>profile-Products.ATContentTypes:base</dependency>
-      <dependency>profile-collective.portletpage:portletpage</dependency>
+      <dependency>profile-collective.portletpage:base</dependency>
   </dependencies>
 </metadata>
