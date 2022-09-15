@@ -1,13 +1,25 @@
 import zope.i18nmessageid
 from collective.portletpage import config
-
-from Products.Archetypes import atapi
 from Products.CMFCore import utils
+
+try:
+    from Products.Archetypes import atapi
+    HAS_ARCHETYPES = True
+except:
+    HAS_ARCHETYPES = False
+
 
 MessageFactory = zope.i18nmessageid.MessageFactory('collective.portletpage')
 
-
 def initialize(context):
+    """Intializer called when used as a Zope 2 product.
+    """
+
+    if HAS_ARCHETYPES:
+        _at_initialize(context)
+    
+
+def _at_initialize(context):
     """Intializer called when used as a Zope 2 product.
     """
 

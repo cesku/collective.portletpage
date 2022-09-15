@@ -2,7 +2,7 @@
 Creating content
 ================
 
-The portlet pages are simple Archetypes content. Let's ensure that they can
+The portlet pages are simple Dexterity content. Let's ensure that they can
 be created, using a test-browser test.
 
 First, some set-up.

@@ -34,6 +34,7 @@
         directory="profiles/archetypes"
         description="A Page like content with an additional section for showing portlets"
         provides="Products.GenericSetup.interfaces.EXTENSION"
+        zcml:condition="installed Products.Archetypes.atapi"
         />
 
     <configure zcml:condition="installed AccessControl.security">

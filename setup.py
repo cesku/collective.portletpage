@@ -36,9 +36,6 @@ setup(name='collective.portletpage',
         'Products.CMFPlone',
         'plone.portlets',
         'plone.app.portlets',
-        'archetypes.configure',
-        'Products.ATContentTypes',
-        'Products.contentmigration'
       ],
       extras_require={
         'test': [
@@ -46,6 +43,11 @@ setup(name='collective.portletpage',
             'plone.app.robotframework',
             'plone.testing',
         ],
+        'archetypes': [
+          'archetypes.configure',
+          'Products.ATContentTypes',
+          'Products.contentmigration'
+        ],        
        },
       entry_points="""
       [z3c.autoinclude.plugin]
