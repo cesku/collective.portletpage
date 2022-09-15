@@ -22,4 +22,19 @@ def test_suite():
             optionflags=optionflags),
             layer=base.COLLECTIVE_PORTLETPAGE_FUNCTIONAL_TESTING),
 
-        ])
+        # Demonstrate the main content types (Dexterity version)
+        layered(doctest.DocFileSuite(
+            'tests/dx_content.txt', package='collective.portletpage',
+            optionflags=optionflags),
+            layer=base.DX_COLLECTIVE_PORTLETPAGE_FUNCTIONAL_TESTING),
+
+        # Demonstrate the portlet assignment (Dexterity version)
+        layered(doctest.DocFileSuite(
+            'tests/dx_portletassignment.txt', package='collective.portletpage',
+            optionflags=optionflags),
+            layer=base.DX_COLLECTIVE_PORTLETPAGE_FUNCTIONAL_TESTING),
+
+        ]
+
+
+    )

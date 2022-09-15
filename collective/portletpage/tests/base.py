@@ -36,6 +36,25 @@ class CollectivePortletpageLayer(PloneSandboxLayer):
         z2.installProduct(app, 'collective.portletpage')
 
     def setUpPloneSite(self, portal):
+        applyProfile(portal, 'collective.portletpage:archetypes')
+        applyProfile(portal, 'collective.portletpage:testing')
+
+class DXCollectivePortletpageLayer(PloneSandboxLayer):
+
+    defaultBases = (PTC_FUNCTIONAL_TESTING,)
+
+    def setUpZope(self, app, configurationContext):
+        profile_registry.registerProfile('testing',
+            'Collective.portletpage testing profile',
+            'Extension profile including collective.portletpage testing additions',
+            'profiles/testing',
+            'collective.portletpage',
+            EXTENSION)
+        self.loadZCML('testing.zcml', package=collective.portletpage.tests)
+        self.loadZCML(package=collective.portletpage)
+        z2.installProduct(app, 'collective.portletpage')
+
+    def setUpPloneSite(self, portal):
         applyProfile(portal, 'collective.portletpage:default')
         applyProfile(portal, 'collective.portletpage:testing')
 
@@ -60,6 +79,28 @@ COLLECTIVE_PORTLETPAGE_ACCEPTANCE_TESTING = FunctionalTesting(
         z2.ZSERVER_FIXTURE
     ),
     name='CollectivePortletpageLayer:AcceptanceTesting'
+)
+
+DX_COLLECTIVE_PORTLETPAGE_FIXTURE = DXCollectivePortletpageLayer()
+DX_COLLECTIVE_PORTLETPAGE_INTEGRATION_TESTING = IntegrationTesting(
+    bases=(COLLECTIVE_PORTLETPAGE_FIXTURE,),
+    name='DXCollectivePortletpageLayer:IntegrationTesting'
+)
+
+
+DX_COLLECTIVE_PORTLETPAGE_FUNCTIONAL_TESTING = FunctionalTesting(
+    bases=(DX_COLLECTIVE_PORTLETPAGE_FIXTURE,),
+    name='DXCollectivePortletpageLayer:FunctionalTesting'
+)
+
+
+DX_COLLECTIVE_PORTLETPAGE_ACCEPTANCE_TESTING = FunctionalTesting(
+    bases=(
+        DX_COLLECTIVE_PORTLETPAGE_FIXTURE,
+        REMOTE_LIBRARY_BUNDLE_FIXTURE,
+        z2.ZSERVER_FIXTURE
+    ),
+    name='DXCollectivePortletpageLayer:AcceptanceTesting'
 )
 
 

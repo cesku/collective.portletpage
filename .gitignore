@@ -13,6 +13,7 @@
 .svn/
 .project
 .pydevproject
+pyvenv.cfg
 buildout.cfg
 bin/
 build/
