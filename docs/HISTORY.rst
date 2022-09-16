@@ -1,10 +1,12 @@
 Changelog
 =========
 
-1.3.1 (unreleased)
+1.4.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Dexterity version and Python 3 compatibility; a browser view for migrating
+  old versions is also available.  
+  [cesku]
 
 
 1.3.0 (2016-07-15)
