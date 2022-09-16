@@ -14,11 +14,12 @@ PortletPageSchema['description'].storage = atapi.AnnotationStorage()
 PortletPageSchema['text'].storage = atapi.AnnotationStorage()
 finalizeATCTSchema(PortletPageSchema)
 
+
 @implementer(IPortletPage)
 class PortletPage(document.ATDocument):
     """A page with some body text and a list of portlets.
     """
-    
+
     portal_type = "Portlet Page"
 
     _at_rename_after_creation = True
@@ -27,5 +28,6 @@ class PortletPage(document.ATDocument):
     title = atapi.ATFieldProperty('title')
     description = atapi.ATFieldProperty('description')
     text = atapi.ATFieldProperty('text')
+
 
 atapi.registerType(PortletPage, PROJECTNAME)

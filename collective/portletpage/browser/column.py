@@ -5,7 +5,7 @@ from plone.app.portlets.browser.manage import ManageContextualPortlets
 from plone.app.portlets.manager import ColumnPortletManagerRenderer
 from plone.memoize.instance import memoize
 from zope.component import adapts, getMultiAdapter
-from zope.interface import implementsOnly, Interface
+from zope.interface import implementer_only, Interface
 from zope.publisher.interfaces.browser import IBrowserView
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
@@ -37,10 +37,10 @@ class PortletPageColumn(ColumnPortletManagerRenderer):
         return 'column-%s-portlet-%s' % (normal_manager, normal_title)
 
 
+@implementer_only(IManagePortletPagePortletsView)
 class ManagePortlets(ManageContextualPortlets):
     """View used for the edit screen
     """
-    implementsOnly(IManagePortletPagePortletsView)
 
     __call__ = ViewPageTemplateFile('manage-portletpage-portlets.pt')
 

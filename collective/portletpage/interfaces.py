@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
-from collective.portletpage import MessageFactory as _
 from plone.app.portlets.interfaces import IColumn
 from plone.portlets.interfaces import IPortletManager
-from zope import schema
-from zope.interface import Interface
 from plone.app.contenttypes.interfaces import IDocument
 
 

@@ -22,7 +22,7 @@ def test_suite():
             optionflags=optionflags),
             layer=base.DX_COLLECTIVE_PORTLETPAGE_FUNCTIONAL_TESTING),
     ]
-    
+
     at_test_cases = [
         # Demonstrate the main content types
         layered(doctest.DocFileSuite(

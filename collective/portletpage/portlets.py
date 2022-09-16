@@ -44,13 +44,13 @@ class PortletPageRetriever(PortletRetriever):
 
         assignments = []
         for assignment in localManager.values():
-	    try:
-		settings = IPortletAssignmentSettings(assignment)
-	    except TypeError:
-		# Portlet does not exist any longer
-		continue
-	    if not settings.get('visible', True):
-		continue
+            try:
+                settings = IPortletAssignmentSettings(assignment)
+            except TypeError:
+                # Portlet does not exist any longer
+                continue
+            if not settings.get('visible', True):
+                continue
             assignments.append(assignment)
 
         return [{'category': CONTEXT_CATEGORY,

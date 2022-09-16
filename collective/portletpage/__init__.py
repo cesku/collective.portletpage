@@ -1,15 +1,17 @@
 import zope.i18nmessageid
 from collective.portletpage import config
 from Products.CMFCore import utils
+from Products.CMFCore.permissions import setDefaultRoles
 
 try:
     from Products.Archetypes import atapi
     HAS_ARCHETYPES = True
-except:
+except ImportError:
     HAS_ARCHETYPES = False
 
 
 MessageFactory = zope.i18nmessageid.MessageFactory('collective.portletpage')
+
 
 def initialize(context):
     """Intializer called when used as a Zope 2 product.
@@ -17,13 +19,13 @@ def initialize(context):
 
     if HAS_ARCHETYPES:
         _at_initialize(context)
-    
+
 
 def _at_initialize(context):
     """Intializer called when used as a Zope 2 product.
     """
 
-    import content
+    import content # noqa
 
     content_types, constructors, ftis = atapi.process_types(
         atapi.listTypes(config.PROJECTNAME),
@@ -31,12 +33,11 @@ def _at_initialize(context):
 
     for atype, constructor in zip(content_types, constructors):
         utils.ContentInit("%s: %s" % (config.PROJECTNAME, atype.portal_type),
-            content_types = (atype, ),
-            permission = config.ADD_PERMISSIONS[atype.portal_type],
-            extra_constructors = (constructor, ),
-            ).initialize(context)
+                          content_types=(atype, ),
+                          permission=config.ADD_PERMISSIONS[atype.portal_type],
+                          extra_constructors=(constructor, ),
+                          ).initialize(context)
 
 
-from Products.CMFCore.permissions import setDefaultRoles
 DEFAULT_ROLES = ('Manager', 'Site Administrator', 'Contributor')
 setDefaultRoles('Portlet Page: Add Portlet Page', DEFAULT_ROLES)

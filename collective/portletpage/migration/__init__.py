@@ -15,12 +15,12 @@ class MigrateAtPortletPage(BrowserView):
             return self._message()
 
     def _migration(self):
-        fields_mapping = (
-                {'AT_field_name': 'text',
-                'DX_field_name': 'text',
-                'DX_field_type': 'RichText',
-                },
-        )
+        fields_mapping = ({
+            'AT_field_name': 'text',
+            'DX_field_name': 'text',
+            'DX_field_type': 'RichText',
+        })
+
         migrateCustomAT(
             fields_mapping,
             src_type='Portlet Page',
@@ -35,8 +35,8 @@ class MigrateAtPortletPage(BrowserView):
             %(portal_url)s?migrate=1
 
         There are %(number)s Portlet Page to be migrated
-        """% {
+        """ % {
             "portal_url": portal.absolute_url(),
-            "number": len(portal.portal_catalog(portal_type='Portlet Page')) 
+            "number": len(portal.portal_catalog(portal_type='Portlet Page'))
         }
         return msg

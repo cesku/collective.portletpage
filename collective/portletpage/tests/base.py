@@ -7,10 +7,8 @@ from plone.app.testing import IntegrationTesting
 from plone.app.testing import PloneSandboxLayer
 from plone.app.testing.bbb import PloneTestCase
 from plone.app.testing.bbb import PTC_FUNCTIONAL_TESTING
-from plone.app.testing import TEST_USER_PASSWORD
 from plone.testing import z2
-from zope.interface import implements
-import transaction
+from zope.interface import implementer
 
 from plone.app.portlets.portlets import base
 from plone.portlets.interfaces import IPortletDataProvider
@@ -25,12 +23,14 @@ class CollectivePortletpageLayer(PloneSandboxLayer):
     defaultBases = (PTC_FUNCTIONAL_TESTING,)
 
     def setUpZope(self, app, configurationContext):
-        profile_registry.registerProfile('testing',
+        profile_registry.registerProfile(
+            'testing',
             'Collective.portletpage testing profile',
             'Extension profile including collective.portletpage testing additions',
             'profiles/testing',
             'collective.portletpage',
-            EXTENSION)
+            EXTENSION
+        )
         self.loadZCML('testing.zcml', package=collective.portletpage.tests)
         self.loadZCML(package=collective.portletpage)
         z2.installProduct(app, 'collective.portletpage')
@@ -39,17 +39,20 @@ class CollectivePortletpageLayer(PloneSandboxLayer):
         applyProfile(portal, 'collective.portletpage:archetypes')
         applyProfile(portal, 'collective.portletpage:testing')
 
+
 class DXCollectivePortletpageLayer(PloneSandboxLayer):
 
     defaultBases = (PTC_FUNCTIONAL_TESTING,)
 
     def setUpZope(self, app, configurationContext):
-        profile_registry.registerProfile('testing',
+        profile_registry.registerProfile(
+            'testing',
             'Collective.portletpage testing profile',
             'Extension profile including collective.portletpage testing additions',
             'profiles/testing',
             'collective.portletpage',
-            EXTENSION)
+            EXTENSION
+        )
         self.loadZCML('testing.zcml', package=collective.portletpage.tests)
         self.loadZCML(package=collective.portletpage)
         z2.installProduct(app, 'collective.portletpage')
@@ -109,8 +112,8 @@ class IPortletPageDummy(IPortletDataProvider):
     """
 
 
+@implementer(IPortletPageDummy)
 class Assignment(base.Assignment):
-    implements(IPortletPageDummy)
 
     title = "Dummy Portlet"
 
@@ -127,6 +130,7 @@ class AddForm(base.NullAddForm):
 
     def create(self):
         return Assignment()
+
 
 class TestCase(PloneTestCase):
     """We use this base class for all the tests in this package. If necessary,
