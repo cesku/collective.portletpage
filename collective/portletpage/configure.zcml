@@ -9,6 +9,7 @@
     <i18n:registerTranslations directory="locales" />
     <include package="Products.CMFCore"/>
     <include package=".browser" />
+    <include package=".migration" zcml:condition="installed Products.Archetypes.atapi" />
 
     <five:registerPackage package="." initialize=".initialize" />
 

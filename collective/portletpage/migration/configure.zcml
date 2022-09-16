@@ -1,0 +1,14 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="collective.portletpage">
+
+    <browser:page
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        name="migrate-at-portlet-page"
+        class=".MigrateAtPortletPage"
+        permission="zope2.View"
+        />
+
+</configure>
