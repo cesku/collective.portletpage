@@ -28,7 +28,7 @@ Start on the portal root.
     
 Now add a portlet page
 
-    >>> browser.getLink(id='dxportlet_page').click()
+    >>> browser.getLink(id='dxportlet-page').click()
     
 Fill in the form and submit.
     

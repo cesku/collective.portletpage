@@ -8,13 +8,13 @@
   <!-- Basic properties -->
   <property
       i18n:translate=""
-      name="title">Portlet Page (DX)</property>
+      name="title">Portlet Page</property>
   <property
       i18n:translate=""
-      name="description">A page with the common text body and a set of portlets (DX version)</property>
+      name="description">A page with the common text body and a set of portlets</property>
 
   <property name="allow_discussion">False</property>
-  <property name="factory">DXPortlet_Page</property>
+  <property name="factory">DXPortlet Page</property>
   <property name="icon_expr"></property>
   <property name="link_target"></property>
 
@@ -45,7 +45,7 @@
   </property>
 
   <!-- View information -->
-  <property name="add_view_expr">string:${folder_url}/++add++DXPortlet_Page</property>
+  <property name="add_view_expr">string:${folder_url}/++add++DXPortlet Page</property>
   <property name="default_view">two-columns</property>
   <property name="default_view_fallback">False</property>
   <property name="immediate_view">two-columns</property>
