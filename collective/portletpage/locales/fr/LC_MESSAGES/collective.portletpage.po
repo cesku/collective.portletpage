@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.portletpage\n"
-"POT-Creation-Date: 2013-12-17 13:43+0000\n"
+"POT-Creation-Date: 2022-09-16 14:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Sylvain Bouchard <sylvain.bouchard@savoirfairelinux.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,40 +14,40 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.portletpage\n"
 
+#: ./configure.zcml:22
 msgid "A Page like content with an additional section for showing portlets"
 msgstr "Une page de contenu qui peut contenir des portlets"
 
-#: ./profiles/default/types/Portlet_Page.xml
+#: ./profiles/archetypes/types/Portlet_Page.xml
 msgid "A page with the common text body and a set of portlets"
 msgstr ""
 
+#: ./browser/configure.zcml:35
 msgid "A two-column view"
 msgstr "Une vue en deux colonnes"
 
-#: ./interfaces.py:13
-msgid "Body text"
-msgstr "Texte du document"
-
-#: ./browser/manage-portletpage-portlets.pt:16
+#: ./browser/manage-portletpage-portlets.pt:24
+#: ./profiles/base/actions.xml
 msgid "Manage Portlet Page portlets"
 msgstr "Gestion des portlets"
 
-#: ./profiles/default/actions.xml
-msgid "Manage portlets"
-msgstr "Gestion des portlets"
-
-#: ./interfaces.py:12
-msgid "Page title"
-msgstr "Titre de la page"
-
-#: ./profiles/default/types/Portlet_Page.xml
+#: ./configure.zcml:22
+#: ./profiles/archetypes/types/Portlet_Page.xml
 msgid "Portlet Page"
 msgstr "Pages avec portlets"
 
+#: ./configure.zcml:39
+msgid "Portlet Page (Archetypes version)"
+msgstr ""
+
+#: ./configure.zcml:30
+msgid "Portlet Page (base)"
+msgstr ""
+
+#: ./browser/configure.zcml:35
 msgid "Two columns"
 msgstr "Deux colonnes"
 
-#: ./browser/manage-portletpage-portlets.pt:21
+#: ./browser/manage-portletpage-portlets.pt:29
 msgid "Use the controls below to change the portlets assigned to the page."
 msgstr "Utilisez les options ci-dessous pour changer les portlets de la page."
-

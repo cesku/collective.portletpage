@@ -15,7 +15,7 @@
 
     <genericsetup:registerProfile
         name="default"
-        title="Portlet Page (Dexterity version)"
+        title="Portlet Page"
         directory="profiles/default"
         description="A Page like content with an additional section for showing portlets"
         provides="Products.GenericSetup.interfaces.EXTENSION"
