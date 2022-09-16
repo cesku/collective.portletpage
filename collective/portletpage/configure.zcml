@@ -22,6 +22,14 @@
         />
 
     <genericsetup:registerProfile
+        name="uninstall"
+        title="Portlet Page"
+        directory="profiles/uninstall"
+        description="A Page like content with an additional section for showing portlets"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+    <genericsetup:registerProfile
         name="base"
         title="Portlet Page (base)"
         directory="profiles/base"
