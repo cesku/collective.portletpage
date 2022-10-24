@@ -23,7 +23,7 @@
       tal:content="structure python:context.text.output_relative_to(view.context)"
       tal:attributes="class python: toc and 'pat-autotoc' or ''" />
 
-  <div id="portletPageColumns"
+  <div id="portletPageColumns container"
       tal:define="bothColumns python:view.hasColumnFirst() and view.hasColumnSecond()">
 
     <div class="row">
